@@ -1,4 +1,4 @@
-# Netrika
+# Ntrika
 What This Tool Does
 
 # Upload Data
