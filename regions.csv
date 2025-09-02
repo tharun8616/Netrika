@@ -1,0 +1,11 @@
+RegionCode,RegionName,Zone,Manager
+R01,Region-1,North,Alice
+R02,Region-2,North,Bob
+R03,Region-3,East,Charlie
+R04,Region-4,South,Diana
+R05,Region-5,South,Ethan
+R06,Region-6,South,Fiona
+R07,Region-7,North,George
+R08,Region-8,North,Hannah
+R09,Region-9,West,Ian
+R10,Region-10,North,Jane

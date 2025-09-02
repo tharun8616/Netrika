@@ -1,0 +1,59 @@
+tables:
+  - name: sales
+    description: "Each row represents a sales transaction, including product, customer, and location info."
+    columns:
+      SaleID: "Unique ID for the sale transaction"
+      CustomerID: "Reference to the customer who made the purchase"
+      RegionCode: "Code representing the region where the sale occurred"
+      ProductID: "Identifier of the product sold"
+      Amount: "Total value of the sale"
+      Date: "Date the sale was made"
+
+  - name: customers
+    description: "Master table of customers with demographic and regional details"
+    columns:
+      CustomerID: "Unique customer identifier (matches with sales)"
+      Name: "Customer full name"
+      RegionCode: "Region of residence"
+      Segment: "Customer segment: e.g. Individual, SMB, Enterprise"
+      SignupDate: "Date when the customer was registered"
+
+  - name: regions
+    description: "List of geographical regions used for analysis"
+    columns:
+      RegionCode: "Unique region code used in sales and customers"
+      RegionName: "Human-readable region name"
+      Zone: "Broader zone grouping for the region"
+      Manager: "Regional sales manager name"
+
+relationships:
+  # sales.CustomerID → customers.CustomerID
+  - left_table: sales
+    right_table: customers
+    on: CustomerID
+    type: many-to-one
+
+  # sales.RegionCode → regions.RegionCode
+  - left_table: sales
+    right_table: regions
+    on: RegionCode
+    type: many-to-one
+
+  # customers.RegionCode → regions.RegionCode
+  - left_table: customers
+    right_table: regions
+    on: RegionCode
+    type: many-to-one
+
+  # regions.Manager → sales.ProductID (hypothetical linkage)
+  - left_table: regions
+    right_table: sales
+    on: Manager
+    type: one-to-many
+
+  # customers.SignupDate → sales.Date (temporal reference)
+  - left_table: customers
+    right_table: sales
+    on: SignupDate
+    type: one-to-many
+
