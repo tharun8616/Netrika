@@ -13,7 +13,6 @@ Ask Questions in English (or Malayalam)
 
 Instead of writing SQL queries manually, you just type your question naturally.
 
-# Example: “Show me the total sales by region in 2024” or “2024-ലെ റീജിയൻ അടിസ്ഥാനത്തിലുള്ള സെയിൽസ് കാണിക്കൂ”.
 
 # How It Works (Behind the Scenes)
 
